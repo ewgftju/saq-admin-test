@@ -205,3 +205,17 @@ test('Последний системный администратор защи�
   assert.notEqual(canRevokeGrant(state,'g1',day),'');
   assert.equal(allowed(state,'u-admin',context()),false);
 });
+
+test('Профиль центрального аппарата не назначается сотруднику территориального органа', () => {
+  const state=fresh();
+  const g={id:'new-ca',userId:'u-reserve',roleId:'prof.specialist_ca',orgId:'astana',scope:'all',start:day,end:'',basis:'Проверка',status:'active',caseIds:[],region:'',bin:''};
+  assert.notEqual(validateGrant(state,g,day),'');
+  assert.equal(validateGrant(state,{...g,userId:'u-sur',orgId:'ca'},day),'');
+});
+
+test('Территориальное назначение не выдается сотруднику чужого подразделения', () => {
+  const state=fresh();
+  const g={id:'new-region',userId:'u-reserve',roleId:'prof.specialist_region',orgId:'atyrau',scope:'region',region:'Атырауская область',start:day,end:'',basis:'Проверка',status:'active',caseIds:[],bin:''};
+  assert.notEqual(validateGrant(state,g,day),'');
+  assert.equal(validateGrant(state,{...g,orgId:'astana',region:'Астана'},day),'');
+});

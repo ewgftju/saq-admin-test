@@ -32,6 +32,8 @@ export function validateGrant(state,g,day=localDay()) {
   if(!g.basis?.trim()) return 'Укажите основание назначения.';
   if(g.end&&g.end<day) return 'Нельзя создать уже истекшее назначение.';
   if((g.scope==='region'||r.regionOnly)&&(!g.region||org.region!==g.region)) return 'Регион должен совпадать с регионом выбранного органа.';
+  if(r.regionOnly&&(u.orgId!==g.orgId||org.type!=='Территориальное подразделение')) return 'Территориальная роль назначается сотруднику своего территориального подразделения.';
+  if((r.baseRoleId||r.id).startsWith('prof.')&&(r.baseRoleId||r.id).endsWith('_ca')&&(u.orgId!==g.orgId||org.type!=='Центральный аппарат')) return 'Роль центрального аппарата назначается сотруднику центрального аппарата.';
   if((g.scope==='bin'||r.external)&&(!/^\d{12}$/.test(g.bin||'')||g.bin!==org.bin||u.orgId!==org.id)) return 'Для внешней роли нужен подтвержденный БИН организации пользователя (12 цифр).';
   if(r.external&&g.scope!=='bin') return 'Внешняя роль ограничена своей организацией по БИН.';
   if(g.scope==='assigned'&&!g.caseIds?.length) return 'Укажите хотя бы одно назначенное дело.';
