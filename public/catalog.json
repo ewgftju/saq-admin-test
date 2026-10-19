@@ -1,0 +1,1523 @@
+{
+  "version": "1.0",
+  "date": "2026-10-19",
+  "modules": [
+    {
+      "id": "admin",
+      "name": "Администрирование",
+      "short": "АДМ"
+    },
+    {
+      "id": "prof",
+      "name": "Профилактический контроль",
+      "short": "ПК"
+    },
+    {
+      "id": "vga",
+      "name": "Внутренний государственный аудит",
+      "short": "ВГА"
+    },
+    {
+      "id": "sva",
+      "name": "Служба внутреннего аудита",
+      "short": "СВА"
+    },
+    {
+      "id": "sur",
+      "name": "Система управления рисками",
+      "short": "СУР"
+    },
+    {
+      "id": "objections",
+      "name": "Возражения и апелляции",
+      "short": "ВОЗ"
+    },
+    {
+      "id": "reports",
+      "name": "Отчетность",
+      "short": "ОТЧ"
+    },
+    {
+      "id": "hr",
+      "name": "Кадры и обучение",
+      "short": "КАД"
+    },
+    {
+      "id": "org",
+      "name": "Организационная деятельность",
+      "short": "ОРГ"
+    },
+    {
+      "id": "og",
+      "name": "Кабинет ОГ",
+      "short": "ОГ"
+    }
+  ],
+  "permissions": [
+    {
+      "id": "read",
+      "name": "Просмотр"
+    },
+    {
+      "id": "download",
+      "name": "Скачивание и выгрузка"
+    },
+    {
+      "id": "create",
+      "name": "Создание"
+    },
+    {
+      "id": "edit",
+      "name": "Редактирование"
+    },
+    {
+      "id": "submit",
+      "name": "Направление"
+    },
+    {
+      "id": "review",
+      "name": "Согласование"
+    },
+    {
+      "id": "approve",
+      "name": "Утверждение"
+    },
+    {
+      "id": "sign",
+      "name": "Подписание"
+    },
+    {
+      "id": "return",
+      "name": "Возврат на доработку"
+    },
+    {
+      "id": "reject",
+      "name": "Отклонение"
+    },
+    {
+      "id": "assign_coauthor",
+      "name": "Назначение соавтора"
+    },
+    {
+      "id": "quality_assign",
+      "name": "Назначение эксперта КК"
+    },
+    {
+      "id": "quality_decide",
+      "name": "Решение по заключению КК"
+    },
+    {
+      "id": "quality_write",
+      "name": "Подготовка заключения КК"
+    },
+    {
+      "id": "registry_confirm",
+      "name": "Подтверждение реестра"
+    },
+    {
+      "id": "task_confirm",
+      "name": "Подтверждение поручения"
+    },
+    {
+      "id": "execution_decide",
+      "name": "Решение по исполнению"
+    },
+    {
+      "id": "respond",
+      "name": "Ответ и материалы объекта"
+    },
+    {
+      "id": "appeal_submit",
+      "name": "Подача возражения"
+    },
+    {
+      "id": "appeal_process",
+      "name": "Рассмотрение возражения"
+    },
+    {
+      "id": "appeal_vote",
+      "name": "Голосование комиссии"
+    },
+    {
+      "id": "learn",
+      "name": "Прохождение обучения"
+    },
+    {
+      "id": "course_manage",
+      "name": "Курсы, тесты и результаты"
+    },
+    {
+      "id": "manage_users",
+      "name": "Управление пользователями"
+    },
+    {
+      "id": "manage_roles",
+      "name": "Управление ролями"
+    },
+    {
+      "id": "manage_orgs",
+      "name": "Справочник организаций"
+    },
+    {
+      "id": "audit_read",
+      "name": "Просмотр журнала доступа"
+    }
+  ],
+  "scopes": [
+    {
+      "id": "all",
+      "name": "Вся Республика Казахстан"
+    },
+    {
+      "id": "organization",
+      "name": "Один орган / организация"
+    },
+    {
+      "id": "region",
+      "name": "Один регион"
+    },
+    {
+      "id": "assigned",
+      "name": "Назначенные дела"
+    },
+    {
+      "id": "bin",
+      "name": "Своя организация по БИН"
+    },
+    {
+      "id": "own",
+      "name": "Собственные записи"
+    }
+  ],
+  "roles": [
+    {
+      "id": "admin.system",
+      "module": "admin",
+      "name": "Системный администратор SAQ",
+      "permissions": [
+        "manage_users",
+        "manage_roles",
+        "manage_orgs",
+        "audit_read"
+      ],
+      "scopes": [
+        "all"
+      ],
+      "description": "Управляет учетными записями и настройками доступа. Бизнес-документы не согласует и не подписывает.",
+      "origin": "source",
+      "source": "Отчеты для сдачи в DFO, лист «Роли (Аудитор)», строка 15",
+      "status": "active",
+      "version": 1,
+      "technical": true
+    },
+    {
+      "id": "admin.organization",
+      "module": "admin",
+      "name": "Администратор организации",
+      "permissions": [
+        "manage_users"
+      ],
+      "scopes": [
+        "organization"
+      ],
+      "description": "Назначает только разрешенные роли сотрудникам своего органа в пределах выданных полномочий. Не управляет системными ролями.",
+      "origin": "proposal",
+      "source": "Проектное предложение",
+      "status": "active",
+      "version": 1,
+      "technical": true
+    },
+    {
+      "id": "admin.access_auditor",
+      "module": "admin",
+      "name": "Аудитор доступа",
+      "permissions": [
+        "audit_read"
+      ],
+      "scopes": [
+        "all",
+        "organization"
+      ],
+      "description": "Просматривает назначения и журнал изменений без права их редактирования.",
+      "origin": "proposal",
+      "source": "Проектное предложение",
+      "status": "active",
+      "version": 1,
+      "technical": true
+    },
+    {
+      "id": "prof.specialist_ca",
+      "module": "prof",
+      "name": "Специалист профилактического контроля центрального аппарата",
+      "permissions": [
+        "read",
+        "download",
+        "create",
+        "edit",
+        "submit"
+      ],
+      "scopes": [
+        "all",
+        "organization",
+        "assigned"
+      ],
+      "description": "Создание и ведение дел, заполнение документов, проверочного листа, актов и предписаний. Только просмотр, без снятия пунктов с контроля и продления сроков.",
+      "origin": "source",
+      "source": "Отчеты для сдачи в DFO, лист «Роли (Аудитор)», строка 6",
+      "status": "active",
+      "version": 1,
+      "regionOnly": false
+    },
+    {
+      "id": "prof.reviewer_ca",
+      "module": "prof",
+      "name": "Согласующее лицо центрального аппарата",
+      "permissions": [
+        "read",
+        "download",
+        "review",
+        "return",
+        "reject"
+      ],
+      "scopes": [
+        "all",
+        "organization",
+        "assigned"
+      ],
+      "description": "Согласование документов, возврат на доработку, просмотр материалов дела. Согласование решений, для которых предусмотрен маршрут согласования, включая продление срока.",
+      "origin": "source",
+      "source": "Отчеты для сдачи в DFO, лист «Роли (Аудитор)», строка 7",
+      "status": "active",
+      "version": 1,
+      "regionOnly": false
+    },
+    {
+      "id": "prof.signer_ca",
+      "module": "prof",
+      "name": "Подписывающее лицо центрального аппарата",
+      "permissions": [
+        "read",
+        "download",
+        "sign",
+        "return"
+      ],
+      "scopes": [
+        "all",
+        "organization",
+        "assigned"
+      ],
+      "description": "Подписание документов, возврат на доработку, просмотр материалов дела. Подписание документов и решений, если это предусмотрено маршрутом.",
+      "origin": "source",
+      "source": "Отчеты для сдачи в DFO, лист «Роли (Аудитор)», строка 8",
+      "status": "active",
+      "version": 1,
+      "regionOnly": false
+    },
+    {
+      "id": "prof.group_head_ca",
+      "module": "prof",
+      "name": "Руководитель рабочей группы центрального аппарата",
+      "permissions": [
+        "read",
+        "download",
+        "create",
+        "edit",
+        "submit",
+        "execution_decide"
+      ],
+      "scopes": [
+        "all",
+        "organization",
+        "assigned"
+      ],
+      "description": "Полный доступ к назначенным делам, документам и результатам контроля. Рассмотрение материалов, продление срока, снятие пунктов с контроля, указание даты решения.",
+      "origin": "source",
+      "source": "Отчеты для сдачи в DFO, лист «Роли (Аудитор)», строка 9",
+      "status": "active",
+      "version": 1,
+      "regionOnly": false
+    },
+    {
+      "id": "prof.specialist_region",
+      "module": "prof",
+      "name": "Специалист профилактического контроля территориального подразделения",
+      "permissions": [
+        "read",
+        "download",
+        "create",
+        "edit",
+        "submit"
+      ],
+      "scopes": [
+        "region",
+        "assigned"
+      ],
+      "description": "Создание и ведение назначенных дел, заполнение документов и проверочного листа. Только просмотр, без принятия решений.",
+      "origin": "source",
+      "source": "Отчеты для сдачи в DFO, лист «Роли (Аудитор)», строка 10",
+      "status": "active",
+      "version": 1,
+      "regionOnly": true
+    },
+    {
+      "id": "prof.group_head_region",
+      "module": "prof",
+      "name": "Руководитель рабочей группы территориального подразделения",
+      "permissions": [
+        "read",
+        "download",
+        "create",
+        "edit",
+        "submit",
+        "execution_decide"
+      ],
+      "scopes": [
+        "region",
+        "assigned"
+      ],
+      "description": "Полный доступ к назначенным делам территориального подразделения. Продление срока, снятие пунктов с контроля, указание даты и основания решения.",
+      "origin": "source",
+      "source": "Отчеты для сдачи в DFO, лист «Роли (Аудитор)», строка 11",
+      "status": "active",
+      "version": 1,
+      "regionOnly": true
+    },
+    {
+      "id": "prof.reviewer_region",
+      "module": "prof",
+      "name": "Согласующее лицо территориального подразделения",
+      "permissions": [
+        "read",
+        "download",
+        "review",
+        "return",
+        "reject"
+      ],
+      "scopes": [
+        "region",
+        "assigned"
+      ],
+      "description": "Согласование документов и возврат на доработку. Согласование решений по назначенным делам, включая продление срока.",
+      "origin": "source",
+      "source": "Отчеты для сдачи в DFO, лист «Роли (Аудитор)», строка 12",
+      "status": "active",
+      "version": 1,
+      "regionOnly": true
+    },
+    {
+      "id": "prof.signer_region",
+      "module": "prof",
+      "name": "Подписывающее лицо территориального подразделения",
+      "permissions": [
+        "read",
+        "download",
+        "sign",
+        "return"
+      ],
+      "scopes": [
+        "region",
+        "assigned"
+      ],
+      "description": "Подписание документов и возврат на доработку. Подписание документов и решений по назначенным делам.",
+      "origin": "source",
+      "source": "Отчеты для сдачи в DFO, лист «Роли (Аудитор)», строка 13",
+      "status": "active",
+      "version": 1,
+      "regionOnly": true
+    },
+    {
+      "id": "prof.observer",
+      "module": "prof",
+      "name": "Наблюдатель / аналитик",
+      "permissions": [
+        "read",
+        "download"
+      ],
+      "scopes": [
+        "all",
+        "organization",
+        "assigned"
+      ],
+      "description": "Только просмотр. Только просмотр.",
+      "origin": "source",
+      "source": "Отчеты для сдачи в DFO, лист «Роли (Аудитор)», строка 14",
+      "status": "active",
+      "version": 1,
+      "regionOnly": false
+    },
+    {
+      "id": "prof.object_specialist",
+      "module": "prof",
+      "name": "Специалист в организации объекта",
+      "permissions": [
+        "read",
+        "download",
+        "respond",
+        "submit"
+      ],
+      "scopes": [
+        "bin"
+      ],
+      "description": "Прикладывает документы к предписанию. Только документы, направленные организации объекта.",
+      "origin": "source",
+      "source": "Отчеты для сдачи в DFO, лист «Роли (Субъекты)», строка 2",
+      "status": "active",
+      "version": 1,
+      "external": true
+    },
+    {
+      "id": "prof.object_reviewer",
+      "module": "prof",
+      "name": "Согласующее лицо в организации объекта",
+      "permissions": [
+        "read",
+        "download",
+        "review",
+        "return",
+        "reject"
+      ],
+      "scopes": [
+        "bin"
+      ],
+      "description": "Согласует документы. Только документы, направленные организации объекта.",
+      "origin": "source",
+      "source": "Отчеты для сдачи в DFO, лист «Роли (Субъекты)», строка 3",
+      "status": "active",
+      "version": 1,
+      "external": true
+    },
+    {
+      "id": "prof.object_signer",
+      "module": "prof",
+      "name": "Подписывающее лицо в организации объекта",
+      "permissions": [
+        "read",
+        "download",
+        "sign",
+        "return"
+      ],
+      "scopes": [
+        "bin"
+      ],
+      "description": "Подписывает документы. Только документы, направленные организации объекта.",
+      "origin": "source",
+      "source": "Отчеты для сдачи в DFO, лист «Роли (Субъекты)», строка 4",
+      "status": "active",
+      "version": 1,
+      "external": true
+    },
+    {
+      "id": "vga.auditor",
+      "module": "vga",
+      "name": "Аудитор",
+      "permissions": [
+        "read",
+        "download",
+        "create",
+        "edit",
+        "submit",
+        "sign"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Автор и соавторы создают и заполняют документы, направляют их на согласование, подтверждение, КК, утверждение и объекту; участники РГ подписывают отчёт и задание; заполняют рабочие документы. Только дела, где пользователь автор, соавтор или участник РГ.",
+      "origin": "source",
+      "source": "Обе постановки: §3.1, таблица 7",
+      "status": "active",
+      "version": 1,
+      "external": false,
+      "quality": false
+    },
+    {
+      "id": "vga.invited_specialist",
+      "module": "vga",
+      "name": "Приглашённый специалист",
+      "permissions": [
+        "read",
+        "download",
+        "sign"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Подписывает отчёт как участник рабочей группы. Только дела приглашения; дело не ведёт.",
+      "origin": "source",
+      "source": "Обе постановки: §3.1, таблица 7",
+      "status": "active",
+      "version": 1,
+      "external": false,
+      "quality": false
+    },
+    {
+      "id": "vga.reviewer",
+      "module": "vga",
+      "name": "Согласующий",
+      "permissions": [
+        "read",
+        "download",
+        "review",
+        "return",
+        "reject"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Согласует, возвращает или отклоняет документ. Только при назначении в текущем этапе маршрута и только по актуальной редакции.",
+      "origin": "source",
+      "source": "Обе постановки: §3.1, таблица 7",
+      "status": "active",
+      "version": 1,
+      "external": false,
+      "quality": false
+    },
+    {
+      "id": "vga.approver",
+      "module": "vga",
+      "name": "Утверждающий",
+      "permissions": [
+        "read",
+        "download",
+        "approve",
+        "return",
+        "assign_coauthor",
+        "execution_decide"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Утверждает документы, назначает соавтора дела, согласует решения по пунктам исполнения. Документы, где назначен утверждающим; решения по пунктам своего органа.",
+      "origin": "source",
+      "source": "Обе постановки: §3.1, таблица 7",
+      "status": "active",
+      "version": 1,
+      "external": false,
+      "quality": false
+    },
+    {
+      "id": "vga.quality_head",
+      "module": "vga",
+      "name": "Руководитель КК",
+      "permissions": [
+        "read",
+        "download",
+        "quality_assign",
+        "quality_decide"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Назначает эксперта на этап, принимает решение по заключению КК. Этапы, за которыми закреплён. Документы аудита не утверждает.",
+      "origin": "source",
+      "source": "Обе постановки: §3.1, таблица 7",
+      "status": "active",
+      "version": 1,
+      "external": false,
+      "quality": true
+    },
+    {
+      "id": "vga.quality_expert",
+      "module": "vga",
+      "name": "Эксперт КК",
+      "permissions": [
+        "read",
+        "download",
+        "quality_write",
+        "sign"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Готовит и подписывает заключение КК. Только этап, на который назначен; не входит в проверяемую РГ.",
+      "origin": "source",
+      "source": "Обе постановки: §3.1, таблица 7",
+      "status": "active",
+      "version": 1,
+      "external": false,
+      "quality": true
+    },
+    {
+      "id": "vga.kvga_employee",
+      "module": "vga",
+      "name": "Сотрудник КВГА",
+      "permissions": [
+        "read",
+        "download",
+        "task_confirm",
+        "return"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Подтверждает или возвращает поручение. Поручения, направленные ему.",
+      "origin": "source",
+      "source": "Обе постановки: §3.1, таблица 7",
+      "status": "active",
+      "version": 1,
+      "external": false,
+      "quality": false
+    },
+    {
+      "id": "vga.registry_confirmer",
+      "module": "vga",
+      "name": "Подтверждающий реестр",
+      "permissions": [
+        "read",
+        "download",
+        "registry_confirm",
+        "return"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Подтверждает или возвращает реестр нарушений вместе с комплектом основного этапа. Реестры, направленные ему.",
+      "origin": "source",
+      "source": "Обе постановки: §3.1, таблица 7",
+      "status": "active",
+      "version": 1,
+      "external": false,
+      "quality": false
+    },
+    {
+      "id": "vga.object_representative",
+      "module": "vga",
+      "name": "Представитель объекта",
+      "permissions": [
+        "read",
+        "download",
+        "respond",
+        "appeal_submit",
+        "sign"
+      ],
+      "scopes": [
+        "bin"
+      ],
+      "description": "Знакомится с документами, подписывает отчёт (с возражениями или без), подаёт возражения, отвечает на заключение формой «Ответ о принятых мерах». Только дела своей организации (по БИН) и только направленные ему документы.",
+      "origin": "source",
+      "source": "Обе постановки: §3.1, таблица 7",
+      "status": "active",
+      "version": 1,
+      "external": true,
+      "quality": false
+    },
+    {
+      "id": "sva.auditor",
+      "module": "sva",
+      "name": "Аудитор СВА",
+      "permissions": [
+        "read",
+        "download",
+        "create",
+        "edit",
+        "submit",
+        "sign"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Автор и соавторы создают и заполняют документы, направляют их на согласование, подтверждение, КК, утверждение и объекту; участники РГ подписывают отчёт и задание; заполняют рабочие документы. Только свой государственный орган / организация СВА и назначенные дела; Только дела, где пользователь автор, соавтор или участник РГ.",
+      "origin": "proposal",
+      "source": "По аналогии с ВГА; отдельная постановка СВА не предоставлена",
+      "status": "active",
+      "version": 1,
+      "external": false,
+      "quality": false
+    },
+    {
+      "id": "sva.invited_specialist",
+      "module": "sva",
+      "name": "Приглашённый специалист СВА",
+      "permissions": [
+        "read",
+        "download",
+        "sign"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Подписывает отчёт как участник рабочей группы. Только свой государственный орган / организация СВА и назначенные дела; Только дела приглашения; дело не ведёт.",
+      "origin": "proposal",
+      "source": "По аналогии с ВГА; отдельная постановка СВА не предоставлена",
+      "status": "active",
+      "version": 1,
+      "external": false,
+      "quality": false
+    },
+    {
+      "id": "sva.reviewer",
+      "module": "sva",
+      "name": "Согласующий СВА",
+      "permissions": [
+        "read",
+        "download",
+        "review",
+        "return",
+        "reject"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Согласует, возвращает или отклоняет документ. Только свой государственный орган / организация СВА и назначенные дела; Только при назначении в текущем этапе маршрута и только по актуальной редакции.",
+      "origin": "proposal",
+      "source": "По аналогии с ВГА; отдельная постановка СВА не предоставлена",
+      "status": "active",
+      "version": 1,
+      "external": false,
+      "quality": false
+    },
+    {
+      "id": "sva.approver",
+      "module": "sva",
+      "name": "Утверждающий СВА",
+      "permissions": [
+        "read",
+        "download",
+        "approve",
+        "return",
+        "assign_coauthor",
+        "execution_decide"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Утверждает документы, назначает соавтора дела, согласует решения по пунктам исполнения. Только свой государственный орган / организация СВА и назначенные дела; Документы, где назначен утверждающим; решения по пунктам своего органа.",
+      "origin": "proposal",
+      "source": "По аналогии с ВГА; отдельная постановка СВА не предоставлена",
+      "status": "active",
+      "version": 1,
+      "external": false,
+      "quality": false
+    },
+    {
+      "id": "sva.quality_head",
+      "module": "sva",
+      "name": "Руководитель КК СВА",
+      "permissions": [
+        "read",
+        "download",
+        "quality_assign",
+        "quality_decide"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Назначает независимого эксперта КК и утверждает / возвращает заключение КК; не утверждает документы аудита в силу данной роли. Только свой государственный орган / организация СВА и назначенные дела; Этапы, за которыми закреплён. Документы аудита не утверждает.",
+      "origin": "proposal",
+      "source": "По аналогии с ВГА; отдельная постановка СВА не предоставлена",
+      "status": "active",
+      "version": 1,
+      "external": false,
+      "quality": true
+    },
+    {
+      "id": "sva.quality_expert",
+      "module": "sva",
+      "name": "Эксперт КК СВА",
+      "permissions": [
+        "read",
+        "download",
+        "quality_write",
+        "sign"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Готовит и подписывает заключение КК. Только свой государственный орган / организация СВА и назначенные дела; Только этап, на который назначен; не входит в проверяемую РГ.",
+      "origin": "proposal",
+      "source": "По аналогии с ВГА; отдельная постановка СВА не предоставлена",
+      "status": "active",
+      "version": 1,
+      "external": false,
+      "quality": true
+    },
+    {
+      "id": "sva.registry_confirmer",
+      "module": "sva",
+      "name": "Подтверждающий реестр СВА",
+      "permissions": [
+        "read",
+        "download",
+        "registry_confirm",
+        "return"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Подтверждает или возвращает реестр нарушений вместе с комплектом основного этапа. Только свой государственный орган / организация СВА и назначенные дела; Реестры, направленные ему.",
+      "origin": "proposal",
+      "source": "По аналогии с ВГА; отдельная постановка СВА не предоставлена",
+      "status": "active",
+      "version": 1,
+      "external": false,
+      "quality": false
+    },
+    {
+      "id": "sva.object_representative",
+      "module": "sva",
+      "name": "Представитель объекта СВА",
+      "permissions": [
+        "read",
+        "download",
+        "respond",
+        "appeal_submit",
+        "sign"
+      ],
+      "scopes": [
+        "bin"
+      ],
+      "description": "Знакомится с документами, подписывает отчёт (с возражениями или без), подаёт возражения, отвечает на заключение формой «Ответ о принятых мерах». Только документы, направленные объекту в пределах подтверждённого БИН; доступ ко всем делам организации СВА не предоставляется.",
+      "origin": "proposal",
+      "source": "По аналогии с ВГА; отдельная постановка СВА не предоставлена",
+      "status": "active",
+      "version": 1,
+      "external": true,
+      "quality": false
+    },
+    {
+      "id": "sur.specialist",
+      "module": "sur",
+      "name": "Специалист",
+      "permissions": [
+        "read",
+        "download",
+        "create",
+        "edit",
+        "submit"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned",
+        "all"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "sur.reviewer",
+      "module": "sur",
+      "name": "Согласующий",
+      "permissions": [
+        "read",
+        "download",
+        "review",
+        "return",
+        "reject"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned",
+        "all"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "sur.approver",
+      "module": "sur",
+      "name": "Утверждающий",
+      "permissions": [
+        "read",
+        "download",
+        "approve",
+        "return"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned",
+        "all"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "sur.signer",
+      "module": "sur",
+      "name": "Подписывающий",
+      "permissions": [
+        "read",
+        "download",
+        "sign",
+        "return"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned",
+        "all"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "reports.specialist",
+      "module": "reports",
+      "name": "Специалист",
+      "permissions": [
+        "read",
+        "download",
+        "create",
+        "edit",
+        "submit"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned",
+        "all"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "reports.reviewer",
+      "module": "reports",
+      "name": "Согласующий",
+      "permissions": [
+        "read",
+        "download",
+        "review",
+        "return",
+        "reject"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned",
+        "all"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "reports.approver",
+      "module": "reports",
+      "name": "Утверждающий",
+      "permissions": [
+        "read",
+        "download",
+        "approve",
+        "return"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned",
+        "all"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "reports.signer",
+      "module": "reports",
+      "name": "Подписывающий",
+      "permissions": [
+        "read",
+        "download",
+        "sign",
+        "return"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned",
+        "all"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "hr.specialist",
+      "module": "hr",
+      "name": "Специалист",
+      "permissions": [
+        "read",
+        "download",
+        "create",
+        "edit",
+        "submit",
+        "course_manage"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "hr.reviewer",
+      "module": "hr",
+      "name": "Согласующий",
+      "permissions": [
+        "read",
+        "download",
+        "review",
+        "return",
+        "reject"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "hr.approver",
+      "module": "hr",
+      "name": "Утверждающий",
+      "permissions": [
+        "read",
+        "download",
+        "approve",
+        "return"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "hr.signer",
+      "module": "hr",
+      "name": "Подписывающий",
+      "permissions": [
+        "read",
+        "download",
+        "sign",
+        "return"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "hr.learner",
+      "module": "hr",
+      "name": "Слушатель",
+      "permissions": [
+        "read",
+        "learn"
+      ],
+      "scopes": [
+        "own"
+      ],
+      "description": "Проходит назначенные курсы и тесты, видит только свои результаты.",
+      "origin": "user",
+      "source": "Пользователь: «Ученик»; предложенное наименование «Слушатель»",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "org.specialist",
+      "module": "org",
+      "name": "Специалист",
+      "permissions": [
+        "read",
+        "download",
+        "create",
+        "edit",
+        "submit"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "org.reviewer",
+      "module": "org",
+      "name": "Согласующий",
+      "permissions": [
+        "read",
+        "download",
+        "review",
+        "return",
+        "reject"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "org.approver",
+      "module": "org",
+      "name": "Утверждающий",
+      "permissions": [
+        "read",
+        "download",
+        "approve",
+        "return"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "org.signer",
+      "module": "org",
+      "name": "Подписывающий",
+      "permissions": [
+        "read",
+        "download",
+        "sign",
+        "return"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "og.specialist",
+      "module": "og",
+      "name": "Специалист",
+      "permissions": [
+        "read",
+        "download",
+        "create",
+        "edit",
+        "submit"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "og.reviewer",
+      "module": "og",
+      "name": "Согласующий",
+      "permissions": [
+        "read",
+        "download",
+        "review",
+        "return",
+        "reject"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "og.approver",
+      "module": "og",
+      "name": "Утверждающий",
+      "permissions": [
+        "read",
+        "download",
+        "approve",
+        "return"
+      ],
+      "scopes": [
+        "organization",
+        "region",
+        "assigned"
+      ],
+      "description": "Работает с данными модуля в назначенной области. Решения по документам — только на своем этапе маршрута.",
+      "origin": "user",
+      "source": "Перечень пользователя от 19.10.2026; детализация прав — проектное предложение",
+      "status": "active",
+      "version": 1
+    },
+    {
+      "id": "objections.case_officer",
+      "module": "objections",
+      "name": "Исполнитель рабочего органа",
+      "permissions": [
+        "read",
+        "download",
+        "create",
+        "edit",
+        "submit",
+        "appeal_process"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Регистрирует и ведёт возражение, проверяет комплектность, готовит материалы и проекты решений; работает только с назначенными возражениями.",
+      "origin": "user",
+      "source": "Роли — перечень пользователя от 19.10.2026; права и нормализация — проектное предложение",
+      "status": "active",
+      "version": 1,
+      "external": false
+    },
+    {
+      "id": "objections.deputy_director",
+      "module": "objections",
+      "name": "Заместитель директора ДАВГА",
+      "permissions": [
+        "read",
+        "download",
+        "review",
+        "return",
+        "reject"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Рассматривает и согласует материалы / проекты решений, возвращает на доработку в назначенном этапе маршрута.",
+      "origin": "user",
+      "source": "Роли — перечень пользователя от 19.10.2026; права и нормализация — проектное предложение",
+      "status": "active",
+      "version": 1,
+      "external": false
+    },
+    {
+      "id": "objections.director",
+      "module": "objections",
+      "name": "Директор ДАВГА",
+      "permissions": [
+        "read",
+        "download",
+        "approve",
+        "return",
+        "sign"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Рассматривает и утверждает / подписывает предусмотренные процессом документы рабочего органа в назначенном этапе; функции комиссии отдельно.",
+      "origin": "user",
+      "source": "Роли — перечень пользователя от 19.10.2026; права и нормализация — проектное предложение",
+      "status": "active",
+      "version": 1,
+      "external": false
+    },
+    {
+      "id": "objections.commission_member",
+      "module": "objections",
+      "name": "Член Апелляционной комиссии",
+      "permissions": [
+        "read",
+        "download",
+        "appeal_vote"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Просматривает материалы назначенного заседания, фиксирует мнение / голос; доступ по назначению в состав комиссии.",
+      "origin": "user",
+      "source": "Роли — перечень пользователя от 19.10.2026; права и нормализация — проектное предложение",
+      "status": "active",
+      "version": 1,
+      "external": false
+    },
+    {
+      "id": "objections.commission_chair",
+      "module": "objections",
+      "name": "Председательствующий Апелляционной комиссии",
+      "permissions": [
+        "read",
+        "download",
+        "approve",
+        "return",
+        "sign",
+        "appeal_vote"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Ведёт назначенное заседание и утверждает / подписывает протокол в пределах полномочий процесса; факт председательствования задаётся на заседании.",
+      "origin": "user",
+      "source": "Роли — перечень пользователя от 19.10.2026; права и нормализация — проектное предложение",
+      "status": "active",
+      "version": 1,
+      "external": false
+    },
+    {
+      "id": "objections.audit_authority_representative",
+      "module": "objections",
+      "name": "Представитель КВГА/ДВГА",
+      "permissions": [
+        "read",
+        "download",
+        "respond",
+        "submit"
+      ],
+      "scopes": [
+        "assigned"
+      ],
+      "description": "Готовит и направляет позицию органа аудита и запрошенные материалы по относящимся к своему органу возражениям; КВГА/ДВГА хранится как тип организации, орган и территория.",
+      "origin": "user",
+      "source": "Роли — перечень пользователя от 19.10.2026; права и нормализация — проектное предложение",
+      "status": "active",
+      "version": 1,
+      "external": false
+    },
+    {
+      "id": "objections.applicant",
+      "module": "objections",
+      "name": "Заявитель / уполномоченный представитель заявителя",
+      "permissions": [
+        "read",
+        "download",
+        "appeal_submit",
+        "respond"
+      ],
+      "scopes": [
+        "bin"
+      ],
+      "description": "Подаёт свои возражения, дополнения и получает адресованные результаты; полномочия представительства и БИН подтверждаются.",
+      "origin": "user",
+      "source": "Роли — перечень пользователя от 19.10.2026; права и нормализация — проектное предложение",
+      "status": "active",
+      "version": 1,
+      "external": true
+    },
+    {
+      "id": "objections.audit_object_representative",
+      "module": "objections",
+      "name": "Представитель объекта аудита",
+      "permissions": [
+        "read",
+        "download",
+        "respond"
+      ],
+      "scopes": [
+        "bin"
+      ],
+      "description": "Предоставляет материалы объекта и получает адресованные ему документы по своему БИН. Не получает права заявителя автоматически; одна учётная запись может иметь обе роли.",
+      "origin": "user",
+      "source": "Роли — перечень пользователя от 19.10.2026; права и нормализация — проектное предложение",
+      "status": "active",
+      "version": 1,
+      "external": true
+    }
+  ],
+  "mappings": [
+    {
+      "source": "Сотрудник по формированию полугодового списка",
+      "target": "sur.specialist + отдельно prof.observer при необходимости",
+      "note": "Перечень перенесен в СУР. Просмотр ПК назначается отдельно."
+    },
+    {
+      "source": "Сотрудник по формированию списка с полномочиями проверяющего",
+      "target": "sur.specialist + prof.specialist_ca",
+      "note": "Два назначения с независимыми областями доступа."
+    },
+    {
+      "source": "Непосредственный руководитель по формированию списка",
+      "target": "sur.reviewer + отдельно prof.observer при необходимости",
+      "note": "Согласование списка и доступ к делам ПК разделены."
+    },
+    {
+      "source": "Руководитель по формированию списка с полномочиями контроля",
+      "target": "sur.reviewer + роль ПК по подтвержденным полномочиям",
+      "note": "prof.group_head_ca только при отдельном основании на решения по исполнению."
+    },
+    {
+      "source": "approver + qualityHead",
+      "target": "vga.quality_head",
+      "note": "Не наследует approve для документов аудита."
+    },
+    {
+      "source": "appeal-head",
+      "target": "Роль руководителя в objections по должности и полномочиям",
+      "note": "Не сопоставлять автоматически с председателем комиссии. Точная роль выбирается администратором по основанию."
+    },
+    {
+      "source": "appeal-expert",
+      "target": "objections.case_officer при подтвержденных обязанностях",
+      "note": "Доступ к материалам ВГА только через конкретное возражение."
+    },
+    {
+      "source": "Кабинет объекта SAQ",
+      "target": "Раздел интерфейса",
+      "note": "Не роль. Доступ по назначению представителя и подтвержденному БИН."
+    },
+    {
+      "source": "КВГА/ДВГА; Объект аудита",
+      "target": "Представитель КВГА/ДВГА; Представитель объекта аудита",
+      "note": "Организация хранится отдельно от пользовательской роли."
+    }
+  ]
+}
